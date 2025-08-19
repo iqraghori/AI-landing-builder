@@ -2,48 +2,52 @@
 import axios from "axios";
 
 export async function generateLandingContent(product, audience, desc) {
-  const prompt = `Create a marketing landing page text for a ${product} targeting ${audience}.
+  const prompt = `You are an API that only returns valid JSON.
+  Create a marketing landing page text for a ${product} targeting ${audience}.
   Include: headline, subheadline, 3 bullet benefits, call-to-action.
-  Return JSON with keys: headline, subheadline, benefits, cta.`;
+  Return strictly in JSON format with keys: headline, subheadline, benefits, cta.`;
 
   try {
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "openchat/openchat-7b:free", // model selection
+        model: "openai/gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }],
-        temperature: 0.7
+        temperature: 0.7,
       },
       {
         headers: {
           Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "HTTP-Referer": "http://localhost:3000",
           "X-Title": "AI Landing Page Builder",
-          "Content-Type": "application/json"
-        }
+          "Content-Type": "application/json",
+        },
       }
     );
 
     console.log("API Raw Response:", response.data);
 
-    // Safely access the response
     const rawContent = response.data?.choices?.[0]?.message?.content;
 
-    if (!rawContent) {
-      throw new Error("No content returned from API.");
+    if (!rawContent) throw new Error("No content returned from API.");
+
+    // Clean markdown fences if GPT adds them
+    let cleaned = rawContent.trim();
+    if (cleaned.startsWith("```")) {
+      cleaned = cleaned.replace(/```json|```/g, "").trim();
     }
 
-    // Try parsing JSON
+    // Try parsing
     let parsed;
     try {
-      parsed = JSON.parse(rawContent);
+      parsed = JSON.parse(cleaned);
     } catch (err) {
-      console.warn("Could not parse JSON, returning raw text instead.");
+      console.warn("JSON parse failed, returning fallback.");
       parsed = {
         headline: "Default Headline",
-        subheadline: rawContent,
+        subheadline: cleaned,
         benefits: ["Benefit one", "Benefit two", "Benefit three"],
-        cta: "Get Started"
+        cta: "Get Started",
       };
     }
 
