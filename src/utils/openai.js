@@ -16,7 +16,7 @@ export async function generateLandingContent(product, audience, desc) {
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_OPENROUTER_KEY}`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "HTTP-Referer": "http://localhost:3000",
           "X-Title": "AI Landing Page Builder",
           "Content-Type": "application/json"

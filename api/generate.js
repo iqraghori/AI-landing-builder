@@ -24,7 +24,7 @@ Return ONLY JSON with keys: headline, subheadline, benefits, cta.`;
         headers: {
             Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
 
-          "HTTP-Referer": "https://ai-landing-builder.vercel.app/", // update after deploy
+          "HTTP-Referer": req.headers.origin || "https://ai-landing-builder.vercel.app/", // update after deploy
           "X-Title": "AI Landing Page Builder",
           "Content-Type": "application/json",
         },
