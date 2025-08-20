@@ -9,7 +9,9 @@ function LivePreview({ headline, subheadline, benefits, cta }) {
           <h3 className="text-2xl font-bold">{headline || "Your Headline"}</h3>
 
           {/* Subheadline */}
-          <p className="text-gray-600 mt-2">{subheadline || "Your Subheadline"}</p>
+          <p className="text-gray-600 mt-2">
+            {subheadline || "Your Subheadline"}
+          </p>
 
           {/* Benefits */}
           <ul className="mt-4 space-y-2 text-left">
@@ -22,6 +24,11 @@ function LivePreview({ headline, subheadline, benefits, cta }) {
 
           {/* CTA Button */}
           <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+            <ul className="mt-4 space-y-2 text-left">
+              <li>🔥 Extra Feature One</li>
+              <li>🚀 Extra Feature Two</li>
+              <li>💡 Extra Feature Three</li>
+            </ul>
             {cta || "Call to Action"}
           </button>
         </div>
