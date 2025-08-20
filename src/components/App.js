@@ -7,7 +7,7 @@ function App() {
     headline: "Your Headline Here",
     subheadline: "Your subheadline here.",
     benefits: ["Benefit one", "Benefit two", "Benefit three"],
-    cta: ["Call to Action"," "," "],
+    cta: "Call to Action",
   });
   return (
     <div class="main">
