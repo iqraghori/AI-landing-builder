@@ -23,16 +23,16 @@ function LivePreview({ headline, subheadline, benefits, cta }) {
           </ul>
 
           {/* CTA Button */}
-          <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+          <button className="mt-2 bg-blue-600 text-white px-4 py-0 rounded">
             <ul className="mt-4 space-y-2 text-left">
               {cta && cta.length > 0 ? (
-                cta.map((b, i) => <li key={i}>✅ {b}</li>)
+                cta.map((b, i) => <li key={i}>{b}</li>)
               ) : (
                 <li>Call to Action</li>
               )}
             </ul>
 
-            {cta || "Call to Action"}
+            
           </button>
         </div>
       </div>
