@@ -3,9 +3,9 @@ import axios from "axios";
 
 export async function generateLandingContent(product, audience, desc) {
   const prompt = `You are an API that only returns valid JSON.
-  Create a marketing landing page text for a ${product} targeting ${audience}. 
+  Create a marketing landing page text for a ${product} targeting ${audience}.
   Description: ${desc}
-  Include: headline, subheadline, 3 bullet benefits, call-to-action.
+  Include: headline, subheadline, 3 bullet benefits, and 3 call-to-action options.
   Return strictly in JSON format with keys: headline, subheadline, benefits, cta.
   
   Example format:
@@ -13,8 +13,9 @@ export async function generateLandingContent(product, audience, desc) {
     "headline": "Your Amazing Product",
     "subheadline": "Perfect solution for your needs",
     "benefits": ["Benefit 1", "Benefit 2", "Benefit 3"],
-    "cta": "Get Started Today"
+    "cta": ["Action One", "Action Two", "Action Three"]
   }`;
+
 
   try {
     const response = await axios.post(

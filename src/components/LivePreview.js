@@ -1,4 +1,7 @@
+import { useState } from "react";
 function LivePreview({ headline, subheadline, benefits, cta }) {
+  const [showList, setShowList] = useState(false);
+
   return (
     <div>
       <div className="bg-white shadow rounded-lg p-6 inside-main">
@@ -23,9 +26,26 @@ function LivePreview({ headline, subheadline, benefits, cta }) {
           </ul>
 
           {/* CTA Button */}
-          <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
-            {cta || "Call to Action"}
-          </button>
+          {!showList ? (
+            <button
+              className="mt-4 bg-blue-600 text-white px-4 py-2 rounded"
+              onClick={() => setShowList(true)}
+            >
+              Call to Action
+            </button>
+          ) : (
+            <ul className="mt-4 space-y-2 text-left">
+              {Array.isArray(cta) && cta.length > 0 ? (
+                cta.map((item, i) => <li key={i}>{item}</li>)
+              ) : (
+                <>
+                  <li>👉 Action One</li>
+                  <li>👉 Action Two</li>
+                  <li>👉 Action Three</li>
+                </>
+              )}
+            </ul>
+          )}
         </div>
       </div>
 
