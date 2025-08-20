@@ -22,18 +22,25 @@ function LivePreview({ headline, subheadline, benefits, cta }) {
             )}
           </ul>
 
-          {/* CTA Button */}
-          <button className="mt-2 bg-blue-600 text-white px-4 py-0 rounded">
-            <ul className="mt-4 space-y-2 text-left">
-              {cta && cta.length > 0 ? (
-                cta.map((b, i) => <li key={i}>{b}</li>)
-              ) : (
-                <li>Call to Action</li>
-              )}
-            </ul>
-
-            
-          </button>
+          {/* CTA Section */}
+          <div className="mt-2 bg-blue-600 text-white px-4 py-0 rounded">
+            {Array.isArray(cta) && cta.length > 0 ? (
+              <ul className="space-y-2 text-left">
+                {cta.map((b, i) => (
+                  <li
+                    key={i}
+                    className="bg-blue-600 text-white px-4 py-2 rounded inline-block"
+                  >
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <button className="bg-blue-600 text-white px-50% py-2 rounded">
+                {cta || "Call to Action"}
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
