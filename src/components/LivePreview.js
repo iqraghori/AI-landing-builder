@@ -15,11 +15,11 @@ function LivePreview(data) {
           <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
             {data.cta || "Call to Action"}
           </button>
-          <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
-            {data.cta || "Call to Action"}
-          </button>
         </div>
       </div>
+      <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+        {data.cta || "download Html"}
+      </button>
     </div>
   );
 }
