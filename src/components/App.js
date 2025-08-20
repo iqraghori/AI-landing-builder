@@ -20,11 +20,19 @@ function App() {
 
       <div className="min-h-screen bg-gray-100 p-6 grid grid-cols-1 md:grid-cols-2 gap-6 main ">
         <InputForm setPreviewData={setPreviewData} />
-        <LivePreview data={previewData} />
+        <LivePreview
+          headline={previewData.headline}
+          subheadline={previewData.subheadline}
+          benefits={previewData.benefits}
+          cta={previewData.cta}
+        />
       </div>
     </div>
   );
 }
-console.log("API KEY loaded?", process.env.REACT_APP_OPENROUTER_KEY ? "YES" : "NO");
+console.log(
+  "API KEY loaded?",
+  process.env.REACT_APP_OPENROUTER_KEY ? "YES" : "NO"
+);
 
 export default App;
