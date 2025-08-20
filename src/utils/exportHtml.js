@@ -17,9 +17,14 @@ export function exportLandingPage(data) {
          <ul class="mb-6">
            ${data.benefits.map((b) => `<li class="mb-2">✅ ${b}</li>`).join("")}
          </ul>
-         <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded">${
-           data.cta
-         }</a>
+
+         <!-- CTA List -->
+         <ul class="mt-6 space-y-2">
+           ${Array.isArray(data.cta) 
+             ? data.cta.map((c) => `<li><a href="#" class="bg-blue-600 text-white px-6 py-3 rounded inline-block">${c}</a></li>`).join("")
+             : `<li><a href="#" class="bg-blue-600 text-white px-6 py-3 rounded inline-block">${data.cta}</a></li>`
+           }
+         </ul>
        </section>
      </body>
      </html>

@@ -25,6 +25,7 @@ function App() {
           subheadline={previewData.subheadline}
           benefits={previewData.benefits}
           cta={previewData.cta}
+          data={previewData}
         />
       </div>
     </div>

@@ -1,5 +1,7 @@
 import { useState } from "react";
-function LivePreview({ headline, subheadline, benefits, cta }) {
+import { exportLandingPage } from "../utils/exportHtml";
+
+function LivePreview({ headline, subheadline, benefits, cta,data }) {
   const [showList, setShowList] = useState(false);
 
   return (
@@ -49,8 +51,11 @@ function LivePreview({ headline, subheadline, benefits, cta }) {
         </div>
       </div>
 
-      {/* Download HTML button */}
-      <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+      {/* Download HTML */}
+      <button
+        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded"
+        onClick={() => exportLandingPage(data)}
+      >
         Download HTML
       </button>
     </div>
