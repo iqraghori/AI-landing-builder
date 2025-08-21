@@ -30,7 +30,7 @@ function LivePreview({ headline, subheadline, benefits, cta,data }) {
           {/* CTA Button */}
           {!showList ? (
             <button
-              className="mt-4 bg-blue-600 text-white px-4 py-2 rounded"
+              className="mt-4 bg-teal-800 text-white px-4 py-2 rounded"
               onClick={() => setShowList(true)}
             >
               Call to Action
@@ -53,7 +53,7 @@ function LivePreview({ headline, subheadline, benefits, cta,data }) {
 
       {/* Download HTML */}
       <button
-        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded"
+        className="mt-4 bg-teal-800 text-white px-4 py-2 rounded"
         onClick={() => exportLandingPage(data)}
       >
         Download HTML

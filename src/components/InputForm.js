@@ -57,7 +57,7 @@ function InputForm({ setPreviewData }) {
           </div>
           <button
             type="button"
-            className="w-full bg-blue-600 text-white py-2 rounded"
+            className="w-full bg-teal-800 text-white py-2 rounded"
             onClick={handleGenerate}
             disabled={loading}
           >

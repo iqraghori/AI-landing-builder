@@ -3,19 +3,23 @@
 @tailwind utilities;
 
 .main{
-    background-color: black;
+    background-color: rgb(15, 14, 14);
     color: whitesmoke;
+    
+      
 }
 
 .inside-main{
     background-color: #222222;
-    color: #80d5e6;
+    color: rgb(175, 250, 250);
     font-style: oblique;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+input, textarea{
+    color: black;
 
 }
-input{
-    background-color: rgb(76, 72, 72);
 
-}
+
 

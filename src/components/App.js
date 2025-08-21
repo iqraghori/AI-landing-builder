@@ -7,18 +7,22 @@ function App() {
     headline: "Your Headline Here",
     subheadline: "Your subheadline here.",
     benefits: ["Benefit one", "Benefit two", "Benefit three"],
-    cta: ["...","...","..."],
+    cta: ["...", "...", "..."],
   });
   return (
-    <div class="main">
-      <h1 className="text-3xl font-bold text-center mb-6 ">
+    <div
+      class=" min-h-screen pt-4 px-4 rounded text-white 
+         bg-gradient-to-r from-gray-700 via-gray-900 to-teal-900
+         bg-[length:200%_200%] animate-gradient 
+         }">
+      <h1 className="text-3xl font-bold pt-6 text-center mb-6 ">
         AI Landing Page Builder
       </h1>
       <h2 className="text-xl font-bold text-center mb-10">
         <em>AI Landing Page Builder – Generate your website in seconds</em>
       </h2>
 
-      <div className="min-h-screen bg-gray-100 p-6 grid grid-cols-1 md:grid-cols-2 gap-6 main ">
+      <div className=" p-6 grid grid-cols-1 md:grid-cols-2 gap-6 main">
         <InputForm setPreviewData={setPreviewData} />
         <LivePreview
           headline={previewData.headline}
