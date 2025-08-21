@@ -1,3 +1,27 @@
+# Project structure
+    AI-LANDING-BUILDER/
+├── public/
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── App.js
+│   │   ├── InputForm.js
+│   │   └── LivePreview.js
+│   ├── utils/
+│   │   ├── exportHtml.js
+│   │   └── openai.js
+│   ├── index.css
+│   └── index.js
+├── .env
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+├── tailwind.config.js
+└── test.js
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
